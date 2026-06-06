@@ -3,14 +3,15 @@
 Simple internal container registry based on the official Docker Distribution image (`registry:3`).
 
 References:
-- https://hub.docker.com/_/registry
-- https://distribution.github.io/distribution/about/deploying/
+
+- <https://hub.docker.com/_/registry>
+- <https://distribution.github.io/distribution/about/deploying/>
 
 ## Files
 
 - `docker-compose.yml` - registry service definition.
 - `images.txt` - upstream images to mirror (one per line).
-- `sync-images.sh` - pulls, retags, and pushes images to internal registry (hostname and IP tags), with optional registry garbage collection.
+- `sync-images.sh` - pulls, re-tags, and pushes images to internal registry (hostname and IP tags), with optional registry garbage collection.
 
 ## Start the registry
 
@@ -63,6 +64,7 @@ chmod +x sync-images.sh
 ```
 
 The script will, for each source image:
+
 1. pull the upstream image.
 2. tag and push to `<hostname>:<port>/<image>`.
 3. tag and push to `<ip>:<port>/<image>`.
